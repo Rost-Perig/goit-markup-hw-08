@@ -272,6 +272,7 @@ p {
   padding: 0;
   border: none;
   background-color: #ffffff;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -323,12 +324,13 @@ p {
 @media screen and (max-width: 767px) {
   .top-line__menu {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     /*меню открываеся с 0 на боди*/
     z-index: 7;
     left: 0;
     width: 100%;
+    height: 100%;
     padding: 48px 40px;
   }
   .top-line__menu.menu-is-open {

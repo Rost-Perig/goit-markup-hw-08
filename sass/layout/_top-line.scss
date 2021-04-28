@@ -23,6 +23,7 @@
   padding: 0;
   border: none;
   background-color: $white-basis;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -63,12 +64,13 @@
 .top-line__menu {
   @media screen and (max-width: 767px) {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0; /*меню открываеся с 0 на боди*/
     //top: 100%; /*меню открываеся под хедером*/
     z-index: 7;
     left: 0;
     width: 100%;
+    height: 100%;
     padding: 48px 40px;
 
     &.menu-is-open {
