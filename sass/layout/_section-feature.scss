@@ -27,6 +27,12 @@
     }
   }
 
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &__item:nth-child(2) .feature-list__text {
+      padding-bottom: 23px;
+    }
+  }
+
   &__item + &__item {
     margin-top: 30px;
   }
