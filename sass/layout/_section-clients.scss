@@ -1,0 +1,48 @@
+.section-clients {
+  @extend %sectionPadding;
+
+  @media screen and (min-width: 1200px) {
+    padding: 94px 0;
+  }
+}
+
+.clients-list {
+  @include centeredFlex(center, center, wrap);
+  @include gridMargin();
+}
+
+.clients-list__item {
+  @include gridFormula(2);
+
+  @media screen and (min-width: 768px) {
+    @include gridFormula(3);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include gridFormula(6);
+  }
+}
+
+.clients-list__link {
+  @include centeredFlex();
+  height: 90px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: $team-soc-link;
+  transition: border-color $transit-properties;
+
+  &:hover,
+  &:focus {
+    border-color: $accent-brand;
+  }
+  &:hover .client-list__icon,
+  &:focus .client-list__icon {
+    fill: $accent-brand;
+  }
+}
+
+.client-list__icon {
+  fill: $team-soc-link;
+  transition: fill $transit-properties;
+}

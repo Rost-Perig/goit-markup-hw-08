@@ -1,0 +1,31 @@
+.section-work {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+
+  @extend %sectionPadding;
+}
+
+.work-list {
+  @include centeredFlex(center, center, wrap);
+  @include gridMargin();
+}
+
+.work-list__item {
+  position: relative;
+  @include gridFormula(3);
+}
+
+.work__cell {
+  position: absolute;
+  @include centeredFlex();
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 70px;
+  font-weight: 700;
+  line-height: 1.17;
+  text-transform: uppercase;
+  color: $white-basis;
+  background-color: $work-cell-bg;
+}

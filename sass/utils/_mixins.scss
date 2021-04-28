@@ -1,0 +1,25 @@
+@mixin centeredFlex(
+  $al-It: center,
+  $just-Cont: center,
+  $fl-wrap: nowrap,
+  $fl-dir: row
+) {
+  display: flex;
+  align-items: $al-It;
+  justify-content: $just-Cont;
+  flex-wrap: $fl-wrap;
+  flex-direction: $fl-dir;
+}
+
+@mixin gridFormula($number-columns: 1, $grid-gap: 30px) {
+  flex-basis: calc(
+    (100% - #{$grid-gap} * #{$number-columns}) / #{$number-columns}
+  );
+  margin-top: $grid-gap;
+  margin-left: $grid-gap;
+}
+
+@mixin gridMargin($grid-gap: 30px) {
+  margin-top: -1 * $grid-gap;
+  margin-left: -1 * $grid-gap;
+}

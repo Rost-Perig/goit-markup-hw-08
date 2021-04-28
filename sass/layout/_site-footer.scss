@@ -1,0 +1,147 @@
+.site-footer {
+  @extend %sectionPadding;
+  background-color: $darck-bg;
+}
+
+.site-footer__container {
+  @media screen and (max-width: 767px) {
+    @include centeredFlex(center, center, nowrap, column);
+  }
+
+  @media screen and (min-width: 768px) {
+    @include centeredFlex(baseline, center, wrap);
+  }
+}
+
+.footer-item {
+  flex-basis: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: 50%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: 25%;
+  }
+
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+  }
+}
+
+.footer-item + .footer-item {
+  @media screen and (max-width: 767px) {
+    margin-top: 60px;
+  }
+}
+
+.footer-item--mailing {
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+  }
+}
+
+.foo-address {
+  margin-top: 20px;
+}
+
+.foo-navi {
+  &__item + &__item {
+    margin-top: 9px;
+  }
+}
+
+.foo-navi__goo-maps {
+  color: $white-basis;
+  line-height: 1.7;
+  transition: color $transit-properties;
+
+  &:hover,
+  &:focus {
+    color: $accent-brand;
+  }
+}
+
+.foo-navi__link {
+  color: $white-opacity;
+  line-height: 1.71;
+  transition: color $transit-properties;
+
+  &:hover,
+  &:focus {
+    color: $accent-brand;
+  }
+}
+
+.footer-item__title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $white-basis;
+}
+.social-list {
+  @media screen and (min-width: 1200px) {
+    justify-content: flex-start;
+  }
+}
+
+.footer-item--mailing {
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.mailing-form {
+  @media screen and (min-width: 1200px) {
+    @include centeredFlex();
+  }
+
+  &__input {
+    @include centeredFlex();
+    //width: 358px;
+    height: 50px;
+    padding-left: 16px;
+    /*outline: none; убирает рамку при нажатии, НО УБИРАЕТ ИНТЕРАКТИВНОСТЬ!*/
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 1.25;
+    color: $white-basis;
+    background-color: $darck-bg;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 768px) {
+      width: 450px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 358px;
+      margin-right: 12px;
+    }
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 1.25;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &__send-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    fill: $white-basis;
+  }
+
+  .mailing-form--button {
+    @media screen and (max-width: 1199px) {
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

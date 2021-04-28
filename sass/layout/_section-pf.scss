@@ -1,0 +1,125 @@
+.section-pf {
+  @extend %sectionPadding;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+  .pf--container {
+    @include centeredFlex(center, center, nowrap, column);
+  }
+}
+
+.pf-filter {
+  @include centeredFlex(center, center, wrap);
+  margin-bottom: 56px;
+
+  &__item + &__item {
+    margin-left: 8px;
+  }
+}
+
+/* button для портфолио-фильтра */
+.pf--button {
+  display: inline-block;
+  min-width: 73px;
+  min-height: 38px;
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: transparent;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  vertical-align: top;
+  letter-spacing: 0.03em;
+  color: $black-title;
+  background-color: $light-second-bg;
+  transition: background-color $transit-properties,
+    box-shadow $transit-properties, color $transit-properties;
+  /*outline: none; убирает рамку при нажатии, НО УБИРАЕТ ИНТЕРАКТИВНОСТЬ!*/
+  &:hover,
+  &:focus {
+    color: $white-basis;
+    background-color: $accent-brand;
+    cursor: pointer;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.pf-list {
+  @include centeredFlex(center, flex-start, wrap);
+  @include gridMargin();
+}
+
+.pf-list__item {
+  background-color: $white-basis;
+  @include gridFormula();
+
+  @media screen and (min-width: 768px) {
+    @include gridFormula(2);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include gridFormula(3);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &:first-child .pf-list__text {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+.pf-list__text {
+  padding: 20px 24px 20px 24px;
+  border: 1px solid $color-line;
+  border-top: none;
+  color: $black-text;
+  font-size: 16px;
+  line-height: 1.87;
+  background-color: $white-basis;
+}
+
+.pf-list__title {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.pf-list__cell {
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-list__over {
+  position: absolute;
+  transform: translateY(101%);
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1.56;
+  color: $white-basis;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform $transit-properties;
+}
+
+.pf-list__link {
+  transition: box-shadow $transit-properties;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+  &:hover .pf-list__over,
+  &:focus .pf-list__over {
+    transform: translateY(0);
+  }
+}

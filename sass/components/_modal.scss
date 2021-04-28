@@ -1,0 +1,230 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity $transit-properties;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 450px;
+  min-height: 581px;
+  border-radius: 4px;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  transition: transform $transit-properties;
+
+  &--is-hidden {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
+}
+
+.backdrop--is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  @include centeredFlex();
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /*outline: none; убирает рамку при нажатии, НО УБИРАЕТ ИНТЕРАКТИВНОСТЬ!*/
+  background-color: #fff;
+  transition: background-color $transit-properties,
+    border-color $transit-properties;
+
+  &__icon {
+    fill: rgb(0, 0, 0);
+    transition: fill $transit-properties;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover,
+  &:focus {
+    background-color: $accent-brand;
+    border-color: $accent-brand;
+  }
+  &:hover &__icon,
+  &:focus &__icon {
+    fill: $white-basis;
+  }
+}
+
+.m-form {
+  @include centeredFlex(center, center, nowrap, column);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-form__field {
+  position: relative;
+  @include centeredFlex(center, center, nowrap, column);
+  margin-bottom: 10px;
+  width: 100%;
+  height: 58px;
+
+  &--comment {
+    height: 138px;
+  }
+
+  &:hover .m-form__icon,
+  &:focus-within .m-form__icon {
+    fill: $accent-brand;
+  }
+
+  &:hover .m-form__input,
+  &:focus-within .m-form__input {
+    border-color: $accent-brand;
+    cursor: pointer;
+  }
+
+  &:hover .m-form__label,
+  &:focus-within .m-form__label {
+    color: $accent-brand;
+    cursor: pointer;
+  }
+}
+
+.m-form__field-check {
+  position: relative;
+  @include centeredFlex();
+  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.m-form__title {
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgba (33, 33, 33, 1);
+}
+
+.m-form__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: auto;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01;
+  transition: color $transit-properties;
+}
+
+.m-form__input {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  font-size: 14px;
+  line-height: 1.14;
+  border-radius: 4px;
+  border: 1px solid $color-m-form-input;
+  transition: border-color $transit-properties;
+
+  &--comment {
+    height: 120px;
+    resize: none;
+    padding: 12px 16px;
+    overflow-y: scroll;
+    overflow: initial;
+  }
+  &--comment::placeholder {
+    font-size: 14px;
+    line-height: 1.17;
+    letter-spacing: 0.01;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.m-form__icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  fill: #212121;
+  width: 18px;
+  height: 18px;
+  transition: fill $transit-properties;
+}
+
+.m-form__label-check {
+  margin-left: 8px;
+  margin-right: 3px;
+  font-size: 12px;
+  line-height: 1.71;
+  transition: color $transit-properties;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    margin-right: 4px;
+  }
+
+  .m-form__field-check:hover & {
+    color: $accent-brand;
+  }
+  .m-form__field-check:hover &,
+  .m-form__field-check:focus-within & {
+    cursor: pointer;
+  }
+}
+
+.agreement-linc {
+  font-size: 12px;
+  line-height: 1.71;
+  color: $accent-brand;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.m-form__check-icon {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  fill: none;
+  transition: border-color $transit-properties;
+
+  .m-form__check:checked + & {
+    fill: $white-basis;
+    background-color: $accent-brand;
+    border: none;
+    background-origin: border-box;
+  }
+  .m-form__field-check:hover &,
+  .m-form__field-check:focus-within & {
+    border-color: $accent-brand;
+    cursor: pointer;
+  }
+}
