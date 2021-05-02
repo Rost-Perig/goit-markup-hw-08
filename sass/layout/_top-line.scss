@@ -63,8 +63,7 @@
   @media screen and (max-width: 767px) {
     display: none;
     position: fixed;
-    top: 0; /*меню открываеся с 0 на боди*/
-    //top: 100%; /*меню открываеся под хедером*/
+    top: 0;
     z-index: 7;
     left: 0;
     flex-direction: column;

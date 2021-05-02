@@ -346,7 +346,6 @@ p {
     display: none;
     position: fixed;
     top: 0;
-    /*меню открываеся с 0 на боди*/
     z-index: 7;
     left: 0;
     -webkit-box-orient: vertical;
