@@ -17,7 +17,7 @@
 
 <body>
     <!-- Шапка сайта -->
-    <header class="top-line">
+    <header class=" section top-line">
         <div class="container top-line__container">
             <a href="./index.html" class="logo">Web<span class="logo--top">Studio</span></a>
             <button 
@@ -75,7 +75,7 @@
     <main>
 
         <!-- ГЕРОЙ -->
-        <section class="hero">
+       <section class="section hero">
             <div class="hero__content">
                  <h1 class="hero__title">ЭФФЕКТИВНЫЕ РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА</h1>
                  <button type="button" class="button hero--button" data-modal-open>Заказать услугу</button>
@@ -83,7 +83,7 @@
         </section>
 
         <!-- Особенности-feature --> 
-        <section class="section-feature">
+        <section class="section section-feature">
             <div class="container">
                 <h2 class="section__title visually-hidden">Особенности</h2>
                 <ul class="feature-list">
@@ -143,7 +143,7 @@
 
         <!-- Чем мы занимаемся - work -->
 
-       <section class="section-work">
+       <section class="section section-work">
             <div class="container">
                 <h2 class="section__title">Чем мы занимаемся</h2>
                 <ul class="work-list">
@@ -197,7 +197,7 @@
         </section>
 
         <!-- Наша команда - team -->
-        <section class="section-team">
+       <section class="section section-team">
             <div class="container">
                 <h2 class="section__title">Наша команда</h2>
                 <ul class="team-list">
@@ -413,7 +413,7 @@
             </div>   
         </section>
         
-        <section class="section-clients">
+        <section class="section section-clients">
           <div class="container">
                 <h2 class="section__title">Постоянные клиенты</h2>
                 <ul class="clients-list">
@@ -466,7 +466,7 @@
     </main>
 
     <!-- Футер -->
-    <footer class="site-footer">
+   <footer class="section site-footer">
         <div class="container site-footer__container">
             <div class="footer-item footer-item--navi">
                 <a href="./index.html" class="logo">Web<span     class="logo--footer">Studio</span></a>
@@ -533,8 +533,9 @@
         </div>
         
     </footer>
-    
-    <div class="backdrop backdrop--is-hidden" data-modal>
+
+    <!-- модалка -->
+   <div class="backdrop backdrop--is-hidden" data-modal>
         <div class="modal modal--is-hidden">
             <button type="button" class="modal-close" data-modal-close>
                 <svg class="modal-close__icon" width="18px" height="18px">
@@ -573,8 +574,8 @@
                     <svg class="m-form__check-icon form-check-icon">
                         <use href="./images/icons.svg#check-icon"></use>
                     </svg>
-                    <span class="m-form__label-check">Соглашаюсь с рассылкой и принимаю</span>
-                    <a href=" " class="agreement-linc">Условия договора</a>
+                    <p class="m-form__label-check">Соглашаюсь с рассылкой и принимаю&nbsp;<a href=" " class="agreement-linc">Условия договора</a></p>
+                    
                 </label>
                 <button type="submit" class="button">Отправить</button>
             </form>

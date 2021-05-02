@@ -10,7 +10,7 @@
 
 .feature-list {
   @media screen and (min-width: 768px) {
-    @include centeredFlex(center, center, wrap);
+    @include centeredFlex(stretch, center, wrap);
     margin-top: -30px;
     margin-left: -30px;
   }
@@ -24,12 +24,6 @@
 
     @media screen and (max-width: 767px) {
       text-align: center;
-    }
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    &__item:nth-child(2) .feature-list__text {
-      padding-bottom: 23px;
     }
   }
 

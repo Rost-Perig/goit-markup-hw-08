@@ -24,7 +24,7 @@
   background-size: auto 400px;
   background-position: center;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 481px) {
     background-image: url(../images/heros-m.jpg);
 
     @media (min-device-pixel-ratio: 2),
@@ -80,7 +80,7 @@
   }
 
   &__title {
-    width: 360px;
+    width: 300px;
     font-size: 26px;
     line-height: 1.61;
     margin: 0px auto 30px auto;
@@ -88,6 +88,10 @@
     letter-spacing: 0.06em;
     color: $white-basis;
     text-transform: uppercase;
+
+    @media screen and (min-width: 480px) {
+      width: 360px;
+    }
 
     @media screen and (min-width: 1200px) {
       width: 696px;

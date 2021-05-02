@@ -60,7 +60,7 @@
 }
 
 .pf-list {
-  @include centeredFlex(center, flex-start, wrap);
+  @include centeredFlex(stretch, flex-start, wrap);
   @include gridMargin();
 }
 
@@ -78,8 +78,25 @@
 
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     &:first-child .pf-list__text {
-      padding-bottom: 60px;
+      padding-bottom: 56px;
     }
+  }
+}
+
+.pf-list__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow $transit-properties;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+  &:hover .pf-list__over,
+  &:focus .pf-list__over {
+    transform: translateY(0);
   }
 }
 
@@ -111,25 +128,16 @@
   transform: translateY(101%);
   width: 100%;
   height: 100%;
-  padding: 63px 24px;
+  padding: 23px 24px;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.56;
   color: $white-basis;
   background-color: rgba(33, 150, 243, 0.9);
   transition: transform $transit-properties;
-}
 
-.pf-list__link {
-  transition: box-shadow $transit-properties;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
-  }
-  &:hover .pf-list__over,
-  &:focus .pf-list__over {
-    transform: translateY(0);
+  @media screen and (min-width: 400px) {
+    padding: 63px 24px;
+    font-size: 18px;
   }
 }

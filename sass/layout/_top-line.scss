@@ -1,18 +1,16 @@
 .top-line {
-  @media screen and (max-width: 767px) {
-    //position: relative; /*меню открывается под хедером*/
-  }
-
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: $color-line;
 }
 
 .top-line__container {
-  @include centeredFlex(center, space-between);
+  @include centeredFlex(center, left);
 
   @media screen and (max-width: 767px) {
     height: 60px;
+
+    @include centeredFlex(center, space-between);
   }
 }
 
@@ -69,13 +67,18 @@
     //top: 100%; /*меню открываеся под хедером*/
     z-index: 7;
     left: 0;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     padding: 48px 40px;
 
     &.menu-is-open {
-      display: block;
+      display: flex;
       background-color: $white-basis;
+    }
+
+    .top-line__navi {
+      flex-grow: 1;
     }
 
     .out-navi__icon {
@@ -84,7 +87,6 @@
 
     .out-navi {
       @include centeredFlex(left, left, nowrap, column-reverse);
-      margin-top: 306px;
       margin-bottom: 64px;
     }
 
@@ -133,7 +135,7 @@
       display: none;
     }
 
-    @include centeredFlex(center, space-between);
+    @include centeredFlex();
     width: 100%;
     margin-left: 88px;
 
@@ -185,6 +187,7 @@
     }
 
     .out-navi {
+      margin-left: auto;
       @include centeredFlex(center, center, nowrap, column);
 
       .out-navi__item {

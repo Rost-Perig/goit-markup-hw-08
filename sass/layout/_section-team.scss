@@ -9,7 +9,7 @@
 }
 
 .team-list {
-  @include centeredFlex(center, center, wrap);
+  @include centeredFlex(stretch, center, wrap);
   @include gridMargin();
 }
 
