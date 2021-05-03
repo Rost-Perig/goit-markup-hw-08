@@ -404,6 +404,8 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    margin-top: -10px;
+    margin-left: -10px;
   }
   .top-line__menu .site-navi__item + .site-navi__item {
     margin-top: 32px;
@@ -423,16 +425,19 @@ p {
     margin-bottom: 32px;
   }
   .top-line__menu .top-line-soc__link {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-right: 10px;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2196f3;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
   }
-  .top-line__menu .top-line-soc__link + .top-line-soc__link {
-    padding-left: 10px;
-    margin-left: 10px;
-    border-left: 1px solid rgba(33, 33, 33, 0.2);
+  .top-line__menu .top-line-soc__link:last-child {
+    padding-right: 0;
+    border-right: none;
   }
 }
 
