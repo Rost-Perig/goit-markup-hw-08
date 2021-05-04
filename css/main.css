@@ -417,10 +417,28 @@ p {
     letter-spacing: 0.02em;
     color: #757575;
   }
+}
+
+@media screen and (max-width: 767px) and (max-width: 479px) {
+  .top-line__menu .out-navi__link {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .top-line__menu .out-navi__link--tel {
     font-size: 34px;
     color: #2196f3;
   }
+}
+
+@media screen and (max-width: 767px) and (max-width: 479px) {
+  .top-line__menu .out-navi__link--tel {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .top-line__menu .out-navi__item + .out-navi__item {
     margin-bottom: 32px;
   }
