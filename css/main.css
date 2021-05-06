@@ -1484,7 +1484,7 @@ p {
 }
 
 @media screen and (min-width: 1200px) {
-  .social-list {
+  .footer--social-list {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
